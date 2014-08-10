@@ -14,12 +14,32 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package de.croesch.weekly.data.type;
+package de.croesch.weekly.data.type.task;
+
+import java.time.LocalDate;
+import static java.time.Month.MARCH;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import org.junit.Test;
 
 /**
- *
+ * Provides tests for {@link OnetimeTask#getDueDate()}.
+ * <p>
  * @author Christian Rösch
  */
-public class Task {
+public class Test_OnetimeTask_GetDueDate {
 
+  @Test
+  public void should_Return_Set_DueDate() {
+    final OnetimeTask sut = new OnetimeTask();
+    final LocalDate dueDate = LocalDate.of(2014, MARCH, 17);
+    sut.setDueDate(dueDate);
+    assertThat(sut.getDueDate()).isEqualTo(dueDate);
+  }
+
+  @Test
+  public void should_Be_Null_Initially() {
+    final OnetimeTask sut = new OnetimeTask();
+    assertThat(sut.getDueDate()).isNull();
+  }
 }

@@ -14,12 +14,22 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package de.croesch.weekly.data.type;
+package de.croesch.weekly.data.type.task;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import org.junit.Test;
 
 /**
- *
+ * Provides tests for {@link OnetimeTask#setDescription(String)}.
+ * <p>
  * @author Christian Rösch
  */
-public class RepetitiveTask extends Task {
+public class Test_OnetimeTask_SetDescription {
 
+  @Test
+  public void should_Set_Description() {
+    final OnetimeTask sut = new OnetimeTask();
+    sut.setDescription("describe it");
+    assertThat(sut.getDescription()).isEqualTo("describe it");
+  }
 }
