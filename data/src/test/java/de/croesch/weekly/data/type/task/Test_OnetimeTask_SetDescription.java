@@ -16,8 +16,9 @@
  */
 package de.croesch.weekly.data.type.task;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.Test;
+
+import static de.croesch.weekly.data.assertions.Assertions.assertThat;
 
 /**
  * Provides tests for {@link OnetimeTask#setDescription(String)}.
@@ -30,6 +31,6 @@ public class Test_OnetimeTask_SetDescription {
   public void should_Set_Description() {
     final OnetimeTask sut = new OnetimeTask();
     sut.setDescription("describe it");
-    assertThat(sut.getDescription()).isEqualTo("describe it");
+    assertThat(sut).hasDescription("describe it");
   }
 }

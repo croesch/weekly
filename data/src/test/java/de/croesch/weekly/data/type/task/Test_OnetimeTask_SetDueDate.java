@@ -19,8 +19,9 @@ package de.croesch.weekly.data.type.task;
 import java.time.LocalDate;
 import static java.time.Month.MARCH;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.Test;
+
+import static de.croesch.weekly.data.assertions.Assertions.assertThat;
 
 /**
  * Provides tests for {@link OnetimeTask#setDueDate(LocalDate) }.
@@ -34,6 +35,6 @@ public class Test_OnetimeTask_SetDueDate {
     final LocalDate dueDate = LocalDate.of(2014, MARCH, 25);
     final OnetimeTask sut = new OnetimeTask();
     sut.setDueDate(dueDate);
-    assertThat(sut.getDueDate()).isEqualTo(dueDate);
+    assertThat(sut).hasDueDate(dueDate);
   }
 }

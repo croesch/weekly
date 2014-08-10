@@ -10,6 +10,7 @@
 
   <artifactId>data</artifactId>
   <packaging>jar</packaging>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -18,4 +19,16 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.assertj</groupId>
+        <artifactId>assertj-assertions-generator-maven-plugin</artifactId>
+        <configuration>
+          <entryPointClassPackage>de.croesch.weekly.data.assertions</entryPointClassPackage>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
