@@ -21,7 +21,7 @@ package de.croesch.weekly.data.type.task;
  * <p>
  * @author Christian Rösch
  */
-abstract class Task {
+public abstract class Task {
 
   private String description;
 
